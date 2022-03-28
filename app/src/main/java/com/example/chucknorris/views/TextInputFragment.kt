@@ -11,9 +11,7 @@ import android.widget.Toast
 import com.example.chucknorris.databinding.FragmentTextInputBinding
 import com.example.chucknorris.viewModel.ResultState
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
+
 class TextInputFragment : BaseFragment() {
 
     private var _binding: FragmentTextInputBinding? = null

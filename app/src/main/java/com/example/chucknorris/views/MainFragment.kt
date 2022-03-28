@@ -11,12 +11,11 @@ import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.example.chucknorris.R
+import com.example.chucknorris.adapter.JokesList
 import com.example.chucknorris.databinding.FragmentMainBinding
 import com.example.chucknorris.viewModel.ResultState
 
-/**
- * A simple [Fragment] subclass as the default destination in the navigation.
- */
+
 class MainFragment : BaseFragment() {
 
     private var clicked=false
@@ -34,7 +33,7 @@ class MainFragment : BaseFragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View{
 
 
         jokeViewModel.joke.observe(viewLifecycleOwner) { resultState ->
@@ -54,6 +53,7 @@ class MainFragment : BaseFragment() {
                         Toast.LENGTH_LONG
                     ).show()
                 }
+                else -> {}
             }
         }
 
@@ -72,6 +72,7 @@ class MainFragment : BaseFragment() {
             }
 
             binding.endlessList.setOnClickListener {
+                JokesList.jokesList.clear()
                 findNavController().navigate(R.id.action_MainFragment_to_EndlessListFragment, bundleOf(Pair("explicit",explicit)))
             }
 

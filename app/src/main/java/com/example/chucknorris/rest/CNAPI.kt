@@ -13,10 +13,6 @@ interface CNAPI {
         @Query ("exclude") exclude:String
     ): Response<SingleJoke>
 
-    @GET(JOKE_PATH)
-    suspend fun getCensoredJoke(
-
-    )
 
     @GET(JOKE_PATH+"20/")
     suspend fun getTwentyJokes(

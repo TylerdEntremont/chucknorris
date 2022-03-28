@@ -7,7 +7,6 @@ import com.example.chucknorris.databinding.EndlessListItemBinding
 import com.example.chucknorris.model.Value
 
 class JokeAdapter (
-    private val jokes: MutableList<Value> = mutableListOf()
     ) : RecyclerView.Adapter<JokeViewHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JokeViewHolder {
@@ -21,17 +20,17 @@ class JokeAdapter (
         }
 
         override fun onBindViewHolder(holder: JokeViewHolder, position: Int) =
-            holder.bind(jokes[position])
+            holder.bind(JokesList.jokesList[position])
 
-        override fun getItemCount(): Int = jokes.size
+        override fun getItemCount(): Int = JokesList.jokesList.size
 
         fun setNewJokes(newJokes: List<Value>) {
-            jokes.addAll(newJokes)
+            JokesList.jokesList.addAll(newJokes)
             notifyDataSetChanged()
         }
 
-        fun clearGiveaways(){
-            jokes.clear()
+        fun clearJokes(){
+            JokesList.jokesList.clear()
             notifyDataSetChanged()
         }
     }
