@@ -6,8 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.chucknorris.databinding.EndlessListItemBinding
 import com.example.chucknorris.model.Value
 
-class JokeAdapter (
-    ) : RecyclerView.Adapter<JokeViewHolder>() {
+class JokeAdapter : RecyclerView.Adapter<JokeViewHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JokeViewHolder {
             return JokeViewHolder(
@@ -29,10 +28,6 @@ class JokeAdapter (
             notifyDataSetChanged()
         }
 
-        fun clearJokes(){
-            JokesList.jokesList.clear()
-            notifyDataSetChanged()
-        }
     }
 
     class JokeViewHolder(
